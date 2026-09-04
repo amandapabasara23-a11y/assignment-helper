@@ -98,8 +98,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartNew, onOpenSamp
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3.5rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '2.5rem',
             alignItems: 'center',
           }}
         >
@@ -168,7 +168,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartNew, onOpenSamp
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(4, 1fr)',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
                 gap: '1rem',
                 paddingTop: '1.75rem',
                 marginTop: '1.25rem',
@@ -341,7 +341,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartNew, onOpenSamp
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
             gap: '1.5rem',
           }}
         >
@@ -393,14 +393,14 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartNew, onOpenSamp
           <div
             className="card"
             style={{
-              padding: '3rem 2.5rem',
+              padding: '2.5rem 1.5rem',
               borderRadius: '24px',
               background: 'linear-gradient(135deg, rgba(79, 70, 229, 0.04) 0%, rgba(16, 185, 129, 0.04) 100%)',
               border: '1.5px solid rgba(79, 70, 229, 0.2)',
               boxShadow: 'var(--shadow-md)',
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '2.5rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '2rem',
               alignItems: 'center'
             }}
           >
@@ -554,8 +554,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartNew, onOpenSamp
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '1rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+            gap: '0.85rem',
           }}
         >
           {TEN_STEPS.map((s) => (

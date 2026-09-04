@@ -274,7 +274,8 @@ export const Dashboard: React.FC<DashboardProps> = ({
                       justifyContent: 'space-between',
                       padding: '1.1rem 1.25rem',
                       borderBottom: i < filtered.length - 1 ? '1px solid var(--border)' : 'none',
-                      gap: '1.25rem',
+                      gap: '1rem',
+                      flexWrap: 'wrap',
                       borderRadius: 'var(--r-md)',
                       transition: 'background 0.18s ease',
                     }}

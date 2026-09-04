@@ -488,3 +488,45 @@ body {
   border-color: var(--accent-indigo) !important;
   box-shadow: 0 4px 12px rgba(67, 56, 202, 0.08) !important;
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   MOBILE & SMALL SCREEN RESPONSIVENESS
+   ───────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-label {
+    display: none !important;
+  }
+  .paper-sheet {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 15mm 10mm !important;
+    min-height: auto !important;
+  }
+  .paper-stage {
+    padding: 1rem 0.35rem !important;
+    min-height: auto !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .lock-badge-text {
+    display: none !important;
+  }
+  .display-1 {
+    font-size: 2.1rem !important;
+  }
+  .display-2 {
+    font-size: 1.6rem !important;
+  }
+  .heading-1 {
+    font-size: 1.25rem !important;
+  }
+  .btn-lg, .btn-xl {
+    padding: 0.65rem 1.1rem !important;
+    font-size: 0.875rem !important;
+    width: 100% !important;
+  }
+  .badge {
+    white-space: normal !important;
+  }
+}

@@ -102,7 +102,7 @@ export const Header: React.FC<HeaderProps> = ({
             }}
           >
             <ShieldCheck size={13} strokeWidth={2.5} />
-            <span>CONTENT LOCK ACTIVE</span>
+            <span className="lock-badge-text">CONTENT LOCK ACTIVE</span>
           </div>
         </div>
 
@@ -122,54 +122,60 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => setCurrentView('landing')}
             className={`btn btn-sm ${currentView === 'landing' ? 'btn-primary' : 'btn-ghost'}`}
             style={{ padding: '0.4rem 0.7rem', fontSize: '0.81rem' }}
+            title="Home"
           >
             <Home size={14} />
-            <span>Home</span>
+            <span className="nav-label">Home</span>
           </button>
 
           <button
             onClick={() => setCurrentView('dashboard')}
             className={`btn btn-sm ${currentView === 'dashboard' ? 'btn-primary' : 'btn-ghost'}`}
             style={{ padding: '0.4rem 0.7rem', fontSize: '0.81rem' }}
+            title="Assignments"
           >
             <LayoutGrid size={14} />
-            <span>Assignments</span>
+            <span className="nav-label">Assignments</span>
           </button>
 
           <button
             onClick={() => setCurrentView('practice')}
             className={`btn btn-sm ${currentView === 'practice' ? 'btn-primary' : 'btn-ghost'}`}
             style={{ padding: '0.4rem 0.7rem', fontSize: '0.81rem' }}
+            title="Practice"
           >
             <Target size={14} />
-            <span>Practice</span>
+            <span className="nav-label">Practice</span>
           </button>
 
           <button
             onClick={() => setCurrentView('references')}
             className={`btn btn-sm ${currentView === 'references' ? 'btn-primary' : 'btn-ghost'}`}
             style={{ padding: '0.4rem 0.7rem', fontSize: '0.81rem' }}
+            title="References"
           >
             <FileText size={14} />
-            <span>References</span>
+            <span className="nav-label">References</span>
           </button>
 
           <button
             onClick={() => setCurrentView('aicheck')}
             className={`btn btn-sm ${currentView === 'aicheck' ? 'btn-primary' : 'btn-ghost'}`}
             style={{ padding: '0.4rem 0.7rem', fontSize: '0.81rem' }}
+            title="AI Check"
           >
             <FileCheck size={14} />
-            <span>AI Check</span>
+            <span className="nav-label">AI Check</span>
           </button>
 
           <button
             onClick={onNewAssignment}
             className="btn btn-sm btn-primary"
             style={{ marginLeft: '0.2rem', padding: '0.4rem 0.8rem', fontSize: '0.81rem' }}
+            title="New Assignment"
           >
             <PlusCircle size={14} />
-            <span>New</span>
+            <span className="nav-label">New</span>
           </button>
 
           <button

@@ -213,7 +213,7 @@ export const ExamResultsView: React.FC<ExamResultsViewProps> = ({
                 </div>
 
                 {/* Answers Breakdown */}
-                <div style={{ marginTop: '1rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', background: 'var(--surface-hover)', padding: '0.85rem', borderRadius: 'var(--r-sm)' }}>
+                <div style={{ marginTop: '1rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', background: 'var(--surface-hover)', padding: '0.85rem', borderRadius: 'var(--r-sm)' }}>
                   <div>
                     <span className="body-sm" style={{ fontWeight: 700, color: 'var(--text-3)', fontSize: '0.75rem' }}>YOUR ANSWER:</span>
                     <p style={{ fontSize: '0.88rem', color: isCorrect ? 'var(--text-1)' : 'var(--accent-rose)', margin: '0.2rem 0 0 0', fontWeight: 500 }}>

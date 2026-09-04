@@ -89,7 +89,7 @@ export const OnlineExamPlayer: React.FC<OnlineExamPlayerProps> = ({
       </div>
 
       {/* Main Examination Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 280px', gap: '1.5rem', alignItems: 'start' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', alignItems: 'start' }}>
         {/* Left Column: Question Card */}
         <div className="card" style={{ padding: '2rem', background: 'var(--surface)', minHeight: '480px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           <div>
