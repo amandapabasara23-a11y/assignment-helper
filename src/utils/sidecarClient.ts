@@ -3,7 +3,7 @@
  * Talks to the local Playwright automation sidecar on port 3001.
  */
 
-const SIDECAR_BASE = 'http://localhost:3001';
+const SIDECAR_BASE = import.meta.env.VITE_AUTOMATION_SERVER_URL || 'http://localhost:3001';
 
 export interface RealZeroGPTResult {
   source: string;

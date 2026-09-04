@@ -1,4 +1,5 @@
 import type { Assignment, UniversityTemplate } from '../types';
+import { syncAssignmentToSupabase } from './supabase';
 
 const STORAGE_KEY_ASSIGNMENTS = 'assignment_builder_assignments_v1';
 const STORAGE_KEY_TEMPLATES = 'assignment_builder_templates_v1';
@@ -179,6 +180,10 @@ export function loadAssignmentsFromStorage(): Assignment[] {
 export function saveAssignmentsToStorage(assignments: Assignment[]): void {
   try {
     localStorage.setItem(STORAGE_KEY_ASSIGNMENTS, JSON.stringify(assignments));
+    // Asynchronously sync active assignments to Supabase DB if configured
+    assignments.forEach(asgn => {
+      syncAssignmentToSupabase(asgn).catch(() => {});
+    });
   } catch (e) {
     console.error('Failed to save assignments', e);
   }
