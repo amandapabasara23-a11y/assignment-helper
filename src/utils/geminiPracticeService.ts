@@ -6,9 +6,7 @@ import type {
   SubjectiveEvaluationResult
 } from '../types/practice';
 
-// Hardcoded key provided in GeminiAPi.md
-const FALLBACK_GEMINI_KEY = 'AQ.Ab8RN6Jmn0LdX1h7EN080VCIKp_Fn8M4UwR86iUg2gyDVEj3Dw';
-
+// API key is loaded from .env (VITE_GEMINI_API_KEY) or localStorage — never hardcoded in source.
 export function getGeminiApiKey(): string {
   const customKey = localStorage.getItem('gemini_api_key');
   if (customKey && customKey.trim()) {
@@ -18,7 +16,7 @@ export function getGeminiApiKey(): string {
   if (envKey && envKey.trim() && !envKey.includes('YOUR_')) {
     return envKey.trim();
   }
-  return FALLBACK_GEMINI_KEY;
+  return '';
 }
 
 /**
@@ -27,11 +25,11 @@ export function getGeminiApiKey(): string {
 async function callGeminiApi(prompt: string, systemInstruction?: string): Promise<string> {
   const apiKey = getGeminiApiKey();
   const models = [
-    'gemini-flash-lite-latest',
-    'gemini-3.5-flash-lite',
-    'gemini-3.5-flash',
-    'gemma-4-26b-a4b-it',
-    'gemma-4-31b-it'
+    'gemini-2.5-flash',
+    'gemini-2.0-flash',
+    'gemini-1.5-flash',
+    'gemini-1.5-flash-latest',
+    'gemini-1.5-pro'
   ];
 
   let lastError: Error | null = null;
