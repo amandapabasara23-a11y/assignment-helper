@@ -67,7 +67,12 @@ async function callGeminiApi(prompt: string, systemInstruction?: string): Promis
       if (!response.ok) {
         const errorText = await response.text();
         console.warn(`Gemini model ${model} failed (${response.status}):`, errorText);
-        lastError = new Error(`API call failed: ${response.status} (${model})`);
+        let reason = '';
+        try {
+          const errJson = JSON.parse(errorText);
+          reason = errJson?.error?.message || errJson?.error?.status || '';
+        } catch (_) {}
+        lastError = new Error(`API call failed: ${response.status} (${model})${reason ? ' — ' + reason : ''}`);
         continue;
       }
 
