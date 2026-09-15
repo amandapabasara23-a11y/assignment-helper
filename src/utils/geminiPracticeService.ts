@@ -24,13 +24,13 @@ export function getGeminiApiKey(): string {
  */
 async function callGeminiApi(prompt: string, systemInstruction?: string): Promise<string> {
   const apiKey = getGeminiApiKey();
-  // Models confirmed available for this API key (v1beta endpoint)
+  // Models confirmed available for this API key (tested live)
   const modelEndpoints = [
-    { model: 'gemini-2.5-flash',        version: 'v1beta' },
+    { model: 'gemini-3.6-flash',        version: 'v1beta' },
+    { model: 'gemini-3.5-flash',        version: 'v1beta' },
+    { model: 'gemini-3.1-flash-lite',   version: 'v1beta' },
     { model: 'gemini-flash-latest',     version: 'v1beta' },
-    { model: 'gemini-2.5-flash-lite',   version: 'v1beta' },
-    { model: 'gemini-flash-lite-latest',version: 'v1beta' },
-    { model: 'gemini-2.5-pro',          version: 'v1beta' },
+    { model: 'gemini-3.7-flash',        version: 'v1beta' },
   ];
 
   let lastError: Error | null = null;
