@@ -24,19 +24,20 @@ export function getGeminiApiKey(): string {
  */
 async function callGeminiApi(prompt: string, systemInstruction?: string): Promise<string> {
   const apiKey = getGeminiApiKey();
-  const models = [
-    'gemini-2.5-flash',
-    'gemini-2.0-flash',
-    'gemini-1.5-flash',
-    'gemini-1.5-flash-latest',
-    'gemini-1.5-pro'
+  // Models confirmed available for this API key (v1beta endpoint)
+  const modelEndpoints = [
+    { model: 'gemini-2.5-flash',        version: 'v1beta' },
+    { model: 'gemini-flash-latest',     version: 'v1beta' },
+    { model: 'gemini-2.5-flash-lite',   version: 'v1beta' },
+    { model: 'gemini-flash-lite-latest',version: 'v1beta' },
+    { model: 'gemini-2.5-pro',          version: 'v1beta' },
   ];
 
   let lastError: Error | null = null;
 
-  for (const model of models) {
+  for (const { model, version } of modelEndpoints) {
     try {
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+      const url = `https://generativelanguage.googleapis.com/${version}/models/${model}:generateContent?key=${apiKey}`;
       
       const contents: any[] = [];
       
